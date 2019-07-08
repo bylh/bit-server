@@ -9,7 +9,7 @@ export interface WebPushInfo { // 推送信息
 export type ModelType = 'user' | 'profile' | 'webpush' | 'article'; // 数据类型
 
 // 数据库URL
-export const CollectUri = `mongodb://${Config.Server.DB.User}:${Config.Server.DB.Pwd}@127.0.0.1:${Config.Server.DB.Port}/web`;
+export const CollectUri = `mongodb://${Config.Server.DB.User}:${Config.Server.DB.Pwd}@${Config.Server.IP}:${Config.Server.DB.Port}/web`;
 
 const Schema = mongoose.Schema;
 
