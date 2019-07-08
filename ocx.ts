@@ -122,12 +122,12 @@ const uploadAvatar = multer({
         httpServer = http.createServer(app);
         const options = {
             key: fs.readFileSync('/root/.acme.sh/*.bylh.top/*.bylh.top.key', 'utf8'),
-            cert: fs.readFileSync('/root/.acme.sh/*.bylh.top/ca.cer', 'utf8')
+            cert: fs.readFileSync('/root/.acme.sh/*.bylh.top/fullchain.cer', 'utf8')
         };
         httpsServer = https.createServer(options, app);
         httpsEnable = true;
     } catch (err) {
-        console.log('本地开发环境https默认创建失败，忽略此错误即可');
+        console.log('本地开发环境https默认创建失败，忽略此错误即可', err);
         httpsEnable = false;
     }
 
@@ -325,7 +325,7 @@ const uploadAvatar = multer({
 
     if (process.send != null) process.send('ready');
 
-    console.log('监听http https5000端口');
+    console.log(`监听http https${httpsEnable? 5000 : 5001}端口`);
     process.on('SIGINT', async () => {  // 保存log后退出
         process.exit(); // 程序结束
     });
