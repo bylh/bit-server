@@ -121,8 +121,8 @@ const uploadAvatar = multer({
         console.log('参数：', process.argv[2]);
         httpServer = http.createServer(app);
         const options = {
-            key: fs.readFileSync('/etc/letsencrypt/live/bylh.top/privkey.pem', 'utf8'),
-            cert: fs.readFileSync('/etc/letsencrypt/live/bylh.top/cert.pem', 'utf8')
+            key: fs.readFileSync('/root/.acme.sh/*.bylh.top/*.bylh.top.key', 'utf8'),
+            cert: fs.readFileSync('/root/.acme.sh/*.bylh.top/ca.cer', 'utf8')
         };
         httpsServer = https.createServer(options, app);
         httpsEnable = true;
