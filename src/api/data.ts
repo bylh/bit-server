@@ -241,6 +241,8 @@ export async function getSeg(req: express.Request, res: express.Response) {
 }
 
 export async function getMovie(req: express.Request, res: express.Response) {
+    // 临时添加apiKey
+    req.query.apikey = '0b2bdeda43b5688921839c8ecb20399b';
     try {
         const result = await axios.request({
             url: `https://api.douban.com/v2/movie/in_theaters`,
