@@ -12,7 +12,7 @@ export class Defer<T = void> {
        this._promise = new Promise<T>((resolve, reject) => {
            this._resolve = resolve;
            this._reject = reject;
-       })
+       });
    }
 
    public resolve(value?: T): void {
