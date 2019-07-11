@@ -320,8 +320,9 @@ const uploadAvatar = multer({
     // 启动监听
     if (httpsEnable) {
         httpsServer.listen(5000);
+    } else {
+        httpServer.listen(5001);
     }
-    httpServer.listen(5001);
 
     if (process.send != null) process.send('ready');
 
