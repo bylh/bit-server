@@ -7,7 +7,9 @@
     "start": "ts-node ocx.ts",
     "pm2-dev": "pm2 start ecosystem.config.js --env development --watch",
     "pm2-prod": "pm2 start ecosystem.config.js --env production --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extra-pull": "git subtree pull --prefix=extra  https://github.com/bylh/extra.git master",
+    "extra-push": "git subtree push --prefix=extra  https://github.com/bylh/extra.git master"
   },
   "author": "",
   "license": "ISC",
