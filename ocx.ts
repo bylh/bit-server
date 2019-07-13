@@ -28,6 +28,7 @@ import {getGateBalances, getGateCoinAdress, startGateAutoTrade} from './src/api/
 // 测试代码 ---------------------start
 import socketIo from 'socket.io';
 import redis from 'redis';
+import {getNoteList} from './src/api/ms';
 // 测试代码 ---------------------end
 
 const MongoStore = connectMongo(session);
@@ -319,6 +320,7 @@ const uploadAvatar = multer({
 
     app.use('/get-movie', getMovie);
 
+    app.use('/get-noteList', getNoteList);
     app.use('/get-gate-marketlist', getGateMarketList);
     app.use('/get-gate-balances', getGateBalances);
     app.use('/get-gate-coinAdress', getGateCoinAdress);
