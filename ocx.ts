@@ -320,7 +320,7 @@ const uploadAvatar = multer({
 
     app.use('/get-movie', getMovie);
 
-    // app.use('/get-noteList', getNoteList);
+    app.use('/get-noteList', getNoteList);
 
     app.use('/get-gate-marketlist', getGateMarketList);
     app.use('/get-gate-balances', getGateBalances);
