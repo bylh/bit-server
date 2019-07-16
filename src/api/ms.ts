@@ -69,8 +69,8 @@ export async function getNoteList(req: express.Request, res: express.Response) {
 
         let user = await axios.request({
             method: 'get',
-            // url: 'https://graph.microsoft.com/v1.0/users',
-            url: 'https://graph.microsoft.com/beta/users/4b7909ad-597f-4515-a880-4b6ff54d3ba1/onenote/notebooks',
+            url: 'https://graph.microsoft.com/v1.0/users',
+            // url: 'https://graph.microsoft.com/beta/users/4b7909ad-597f-4515-a880-4b6ff54d3ba1/onenote/notebooks',
             // url: 'https://graph.microsoft.com/v1.0/me/onenote/notebooks',
             headers: {
                 'Authorization': 'Bearer ' + data.data.access_token,
