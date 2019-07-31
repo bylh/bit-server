@@ -2,13 +2,14 @@
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
-
+import mtp from './route/yunxiao/mtp/index'
 (async function main() {
 
     let app = express();
     let httpServer = http.createServer(app);
 
     app.use(cors()); // 解决跨域访问的问题
+    app.use(mtp);
     app.use('/about', about);
     // 启动监听
 
