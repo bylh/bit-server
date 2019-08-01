@@ -7,6 +7,10 @@
     "start": "ts-node ocx.ts",
     "pm2-dev": "pm2 start ecosystem.config.js --env development --watch",
     "pm2-prod": "pm2 start ecosystem.config.js --env production --watch",
+    "pm2-dev-ocx": "pm2 start ecosystem.config.js --env development --watch --only ocx",
+    "pm2-prod-ocx": "pm2 start ecosystem.config.js --env production --watch--only ocx",
+    "pm2-dev-bit": "pm2 start ecosystem.config.js --env development --watch --only bit",
+    "pm2-prod-bit": "pm2 start ecosystem.config.js --env production --watch --only bit",
     "test": "echo \"Error: no test specified\" && exit 1",
     "extra-pull": "git subtree pull --prefix=extra  https://github.com/bylh/extra.git master",
     "extra-push": "git subtree push --prefix=extra  https://github.com/bylh/extra.git master"

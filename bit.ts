@@ -2,7 +2,8 @@
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
-import mtp from './route/yunxiao/mtp/index'
+import mtp from './route/yunxiao/mtp/index';
+import mtp_admin from './route/yunxiao/mtp/admin'
 (async function main() {
 
     let app = express();
@@ -10,6 +11,7 @@ import mtp from './route/yunxiao/mtp/index'
 
     app.use(cors()); // 解决跨域访问的问题
     app.use(mtp);
+    app.use(mtp_admin);
     app.use('/about', about);
     // 启动监听
 
