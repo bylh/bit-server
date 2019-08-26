@@ -2,16 +2,18 @@
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
-import mtp from './route/yunxiao/mtp/index';
-import mtp_admin from './route/yunxiao/mtp/admin'
+import mt from './route/yunxiao/mt/index';
+import mt_admin from './route/yunxiao/mt/admin'
+import bodyParser from 'body-parser';
 (async function main() {
 
     let app = express();
     let httpServer = http.createServer(app);
 
     app.use(cors()); // 解决跨域访问的问题
-    app.use(mtp);
-    app.use(mtp_admin);
+    app.use(bodyParser.json({limit: 1 * 1024 * 1024})); // 最大1M的JSON请求
+    app.use(mt);
+    app.use(mt_admin);
     app.use('/about', about);
     // 启动监听
 
