@@ -262,7 +262,7 @@ const uploadAvatar = multer({
         cookie: {
             httpOnly: false, // 决定了用户是否有读写此cookie的权限
             // expires: // 过期的日期
-            maxAge: 1000 * 3600 * 24 * 5    /*过期时间 3天*/
+            maxAge: 1000 * 3600 * 24 * 30    /*过期时间 30天*/
 
         },
 
