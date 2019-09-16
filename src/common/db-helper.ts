@@ -1,6 +1,6 @@
 import mongoose, { Mongoose, Document } from 'mongoose';
 import { Defer } from './common';
-import Config from '../config';
+import Config from '../../extra/bit/config';
 export interface WebPushInfo { // 推送信息
     userId: string,
     pushSubscription: string

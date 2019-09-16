@@ -3,7 +3,7 @@ const webpush = require('web-push');
 import express from 'express';
 import { Defer } from '../common/common';
 import DBHelper, { WebPushInfo, userModel } from '../common/db-helper';
-import Config from '../config';
+import Config from '../../extra/bit/config';
 import { Payload, PayloadTest } from '../define/webpush';
 
 export async function checkSession(req: express.Request, res: express.Response, next: express.NextFunction) {
